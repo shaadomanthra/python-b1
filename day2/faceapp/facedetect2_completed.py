@@ -1,14 +1,17 @@
+## detect face and draw rectangles
+
+# import packages
 import cv2
 import sys
 
-# Get user supplied values
-imagePath = sys.argv[1]
+# path for image and cascade
+imagePath = "face2.jpg"
 cascPath = "haarcascade_frontalface_default.xml"
 
 # Create the haar cascade
 faceCascade = cv2.CascadeClassifier(cascPath)
 
-# Read the image
+# Read the image & convert to gray scale
 image = cv2.imread(imagePath)
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
@@ -18,21 +21,17 @@ faces = faceCascade.detectMultiScale(
     scaleFactor=1.1,
     minNeighbors=5,
     minSize=(30, 30)
-    # flags = cv2.CV_HAAR_SCALE_IMAGE
 )
 
-# print (faces)
-count = 0
 # Draw a rectangle around the faces
 for (x, y, w, h) in faces:
-    count = count + 1
     cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
-print(count)
+# show image in python gui
 cv2.imshow("Faces found", image)
 
+# Wait for keypress to close image 
 cv2.waitKey(0)
-cv2.imwrite('image.jpg', image) 
 cv2.destroyAllWindows()
 
-# When everything is done, release the capture
+
