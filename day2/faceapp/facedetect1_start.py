@@ -2,7 +2,7 @@
 
 # import packages
 
-# Get user supplied values
+# Get path for images & cascade file
 
 # Create the haar cascade
 
@@ -12,9 +12,6 @@
 
 # print face coordinates
 
-# Draw a rectangle around the faces
-
 # print face count
-
 
 

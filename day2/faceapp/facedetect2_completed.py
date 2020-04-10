@@ -5,7 +5,7 @@ import cv2
 import sys
 
 # path for image and cascade
-imagePath = "face2.jpg"
+imagePath = "face3.jpg"
 cascPath = "haarcascade_frontalface_default.xml"
 
 # Create the haar cascade
@@ -34,4 +34,5 @@ cv2.imshow("Faces found", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
-
+For windows to active virtualenv
+.\env\Scripts\activate
